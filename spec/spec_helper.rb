@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-
-require 'rspec'
 require 'simplecov'
 SimpleCov.start
+
+require 'rspec'
 require 'bundler/setup'
 require 'legion/logging'
 require 'legion/extensions/log'
