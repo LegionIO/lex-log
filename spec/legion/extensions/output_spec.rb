@@ -13,13 +13,14 @@ RSpec.describe Legion::Extensions::Log::Runners::Output do
   it { should respond_to(:to_stdout).with_keywords(:message, :level) }
 
   let(:log) { Legion::Extensions::Log::Runners::Output }
+  let(:location) { './rspec_test.log' }
   it 'can handle to_file' do
-    expect { log.to_file(message: 'test', level: 'info', location: './rspec_test.log') }.not_to raise_exception
-    expect { log.to_file(message: 'test', level: 'unknown', location: './rspec_test.log') }.not_to raise_exception
-    expect { log.to_file(message: 'test', level: 'debug', location: './rspec_test.log') }.not_to raise_exception
-    expect { log.to_file(message: 'test', level: 'warn', location: './rspec_test.log') }.not_to raise_exception
-    expect { log.to_file(message: 'test', level: 'error', location: './rspec_test.log') }.not_to raise_exception
-    expect { log.to_file(message: 'test', level: 'fatal', location: './rspec_test.log') }.not_to raise_exception
+    expect { log.to_file(message: 'test', level: 'info', location: location) }.not_to raise_exception
+    expect { log.to_file(message: 'test', level: 'unknown', location: location) }.not_to raise_exception
+    expect { log.to_file(message: 'test', level: 'debug', location: location) }.not_to raise_exception
+    expect { log.to_file(message: 'test', level: 'warn', location: location) }.not_to raise_exception
+    expect { log.to_file(message: 'test', level: 'error', location: location) }.not_to raise_exception
+    expect { log.to_file(message: 'test', level: 'fatal', location: location) }.not_to raise_exception
   end
   it 'can handle to_stdout' do
     expect { log.to_stdout(message: 'test', level: 'info') }.not_to raise_exception
