@@ -1,11 +1,30 @@
 # frozen_string_literal: true
 
+require 'legion/logging/logger'
+
 module Legion::Extensions::Log
   module Runners
     module Output
-      def self.to_file(location:, message:, level: 'info', **opts); end
+      def to_file(location:, message:, level: 'info', **_opts)
+        logger = Legion::Logging::Logger.new(log_file: location, level: 'debug')
+        if level == 'debug'
+          logger.debug message
+        elsif level == 'warn'
+          logger.warn message
+        elsif level == 'error'
+          logger.error message
+        elsif level == 'fatal'
+          logger.fatal message
+        elsif level == 'unknown'
+          logger.unknown message
+        else
+          logger.info message
+        end
 
-      def self.to_stdout(message:, level: 'info', **_opts)
+        { message: message, level: level, location: location }
+      end
+
+      def to_stdout(message:, level: 'info', **_opts)
         if level == 'debug'
           Legion::Logging.debug message
         elsif level == 'warn'
@@ -19,7 +38,7 @@ module Legion::Extensions::Log
         else
           Legion::Logging.info message
         end
-        { success: true, level: level }
+        { level: level, message: message }
       end
 
       include Legion::Extensions::Helpers::Lex
