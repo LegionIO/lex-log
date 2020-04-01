@@ -8,13 +8,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Esity']
   spec.email         = ['matthewdiverson@gmail.com']
 
-  spec.summary       = 'Write a short summary, because RubyGems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
-  spec.homepage      = 'http://google.com'
+  spec.summary       = 'Used to generate logs within the Legion framework'
+  spec.description   = 'It logs things'
+  spec.homepage      = 'https://bitbucket.org/legion-io/lex-log/src/master/'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
-
-  spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata['homepage_uri'] = spec.homepage
 
