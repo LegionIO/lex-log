@@ -7,15 +7,16 @@ module Legion::Extensions::Log
     module Output
       def to_file(location:, message:, level: 'info', **_opts)
         logger = Legion::Logging::Logger.new(log_file: location, level: 'debug')
-        if level == 'debug'
+        case level
+        when 'debug'
           logger.debug message
-        elsif level == 'warn'
+        when 'warn'
           logger.warn message
-        elsif level == 'error'
+        when 'error'
           logger.error message
-        elsif level == 'fatal'
+        when 'fatal'
           logger.fatal message
-        elsif level == 'unknown'
+        when 'unknown'
           logger.unknown message
         else
           logger.info message
@@ -25,15 +26,16 @@ module Legion::Extensions::Log
       end
 
       def to_stdout(message:, level: 'info', **_opts)
-        if level == 'debug'
+        case level
+        when 'debug'
           Legion::Logging.debug message
-        elsif level == 'warn'
+        when 'warn'
           Legion::Logging.warn message
-        elsif level == 'error'
+        when 'error'
           Legion::Logging.error message
-        elsif level == 'fatal'
+        when 'fatal'
           Legion::Logging.fatal message
-        elsif level == 'unknown'
+        when 'unknown'
           Legion::Logging.unknown message
         else
           Legion::Logging.info message
