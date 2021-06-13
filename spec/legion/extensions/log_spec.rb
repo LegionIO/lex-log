@@ -7,6 +7,6 @@ RSpec.describe Legion::Extensions::Log do
     expect(Legion::Extensions::Log::VERSION).not_to be nil
   end
 
-  it { should be_a Legion::Extensions::Core }
-  it { should respond_to :autobuild }
+  # it { should be_a Legion::Extensions::Core }
+  # it { should respond_to :autobuild }
 end
