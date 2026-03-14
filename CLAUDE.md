@@ -55,6 +55,8 @@ bundle exec rspec
 bundle exec rubocop
 ```
 
+Note: `spec/legion/extensions/output_spec.rb` exists but is entirely commented out. Only `spec/legion/extensions/log_spec.rb` (basic load test) runs.
+
 ---
 
 **Maintained By**: Matthew Iverson (@Esity)
