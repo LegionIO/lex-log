@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 3.4'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/LegionIO/lex-logsrc'
+  spec.metadata['source_code_uri'] = 'https://github.com/LegionIO/lex-log'
   spec.metadata['documentation_uri'] = 'https://github.com/LegionIO/lex-log'
   spec.metadata['changelog_uri'] = 'https://github.com/LegionIO/lex-log'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/LegionIO/lex-log/issues'
@@ -26,6 +26,4 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
   spec.add_dependency 'legion-logging'
-
-  spec.add_development_dependency 'legionio'
 end
