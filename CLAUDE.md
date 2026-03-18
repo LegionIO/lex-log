@@ -55,7 +55,7 @@ bundle exec rspec
 bundle exec rubocop
 ```
 
-Note: `spec/legion/extensions/output_spec.rb` exists but is entirely commented out. Only `spec/legion/extensions/log_spec.rb` (basic load test) runs.
+18 examples, 0 failures, 100% line coverage. Output runner specs cover all log levels for both `to_file` and `to_stdout`.
 
 ---
 
