@@ -6,6 +6,17 @@ SimpleCov.start
 require 'rspec'
 require 'bundler/setup'
 require 'legion/logging'
+require 'legion/json'
+require 'legion/settings'
+
+module Legion
+  module Extensions
+    module Helpers
+      module Lex; end
+    end
+  end
+end
+
 require 'legion/extensions/log'
 
 RSpec.configure do |config|

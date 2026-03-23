@@ -4,16 +4,6 @@ require 'English'
 require 'spec_helper'
 require 'tmpdir'
 
-# Stub the Helpers::Lex module that the runner includes at load time
-module Legion
-  module Extensions
-    module Helpers
-      module Lex; end
-    end
-  end
-end
-$LOADED_FEATURES << 'legion/extensions/helpers/lex'
-
 require 'legion/extensions/log/runners/output'
 
 RSpec.describe Legion::Extensions::Log::Runners::Output do
