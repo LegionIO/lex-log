@@ -10,7 +10,7 @@ Legion Extension that provides asynchronous logging to STDOUT and files within t
 
 **GitHub**: https://github.com/LegionIO/lex-log
 **License**: MIT
-**Version**: 0.1.4
+**Version**: 0.1.6
 
 ## Architecture
 
