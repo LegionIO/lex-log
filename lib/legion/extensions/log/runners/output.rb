@@ -30,17 +30,17 @@ module Legion
           def to_stdout(message:, level: 'info', **_opts)
             case level
             when 'debug'
-              Legion::Logging.debug message
+              Legion::Logging.debug message # rubocop:disable Legion/HelperMigration/DirectLogging
             when 'warn'
-              Legion::Logging.warn message
+              Legion::Logging.warn message # rubocop:disable Legion/HelperMigration/DirectLogging
             when 'error'
-              Legion::Logging.error message
+              Legion::Logging.error message # rubocop:disable Legion/HelperMigration/DirectLogging
             when 'fatal'
-              Legion::Logging.fatal message
+              Legion::Logging.fatal message # rubocop:disable Legion/HelperMigration/DirectLogging
             when 'unknown'
               Legion::Logging.unknown message
             else
-              Legion::Logging.info message
+              Legion::Logging.info message # rubocop:disable Legion/HelperMigration/DirectLogging
             end
             { level: level, message: message }
           end
